@@ -20,7 +20,7 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-
+samet 
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)

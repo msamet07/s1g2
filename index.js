@@ -19,8 +19,16 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+const driverAge = 15 ;
 
-samet 
+if (driverAge > 18 )
+{
+
+  console.log ("true"); 
+} 
+else {
+  console.log ("false");
+}
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -33,9 +41,12 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
-
-
+let birinciDeger = 5 
+let ikinciDeger = 10 
+if (birinciDeger < ikinciDeger) {
+  birinciDeger = 20
+}
+console.log(birinciDeger);
 
 
 /*
@@ -48,7 +59,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
-
+let a = "1999"
+a = Number (a)
+console.log(a);
 
 
 
@@ -61,12 +74,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
-
-
-
+function carpma(a,b){
+  return a * b ;
+ }
+ console.log(carpma (4 , 5));
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -77,8 +88,9 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+ function kopeginYasi(kopekAge){
+  const insanAge = kopekAge * 7 ;
+  return insanAge ;
 }
 
 
@@ -104,12 +116,27 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+var oppChoice = null ;
+var randomNum = Math.floor(Math.random()*3) ;
+if (randomNum == 0) {
+  oppChoice = "Taş"
+} else if (randomNum == 1) {
+  oppChoice == "Kağıt"
+} else {
+  oppChoice == "Makas"
 }
-
-
-
+console.log (oppChoice)
+function oyun (oyuncu, bilgisayar){
+   if (oyuncu == bilgisayar){
+  return 'Beraberlik'
+} else if ((oyuncu == "Taş" && bilgisayar == "Makas")
+         || (oyuncu == "Makas" && bilgisayar == "Kağıt")
+         || (oyuncu == "Kağıt" && bilgisayar == "Taş")) {
+ return 'Kazandın!'           
+  } else {
+  return 'Kaybettin'
+  }
+}
 /* Görev 4 : Metrik Dönüştürücü */
 
 //Görev 4a - Kilometreden Mil
@@ -120,9 +147,11 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km){
+  const mil = km * 0.621371 ;
+  return mil ;
 }
+console.log (milDonusturucu(2));
 
 
 
@@ -134,9 +163,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm){
+  return (cm/30.48);
+
 }
+console.log(feetDonusturucu(100));
 
 
 
@@ -153,10 +184,12 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
-}
+function cocukSarkisi(sayi){
+  return sayi + "küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!" ;
 
+}
+for (let i=5 ; i>0 ; i--)
+{console.log (cocukSarkisi(i))}
 
 /* Görev 6 : Not Hesaplayıcı */
 
@@ -173,9 +206,26 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
-}
+function notHesapla(not){
+  if (not<60)
+  {
+   return "F aldın"
+  }
+  else if(not>=60 && not<70){
+    return "D aldın"
+  }
+  else if(not>=70 && not<80)
+  {
+    return "C aldın"
+  }
+  else if(not>=80 && not<=89)
+  {
+    return "B aldın"
+
+  } else 
+    {return "A aldın"}
+  }
+  notHesapla(80) ;
 
 
 
@@ -191,10 +241,18 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(metin) {
+  //metin = metin. toLowerCase ();
+  let sesliHarfler = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
+  let sayi = 0;
+  for (let i = 0; i < metin.length; i++) {
+    if (sesliHarfler.includes(metin[i])) {
+    sayi = sayi +1
+  }
 }
-
+return sayi ;
+}
+console.log(sesliHarfSayaci("Sametin Günlüğü"));
 
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
